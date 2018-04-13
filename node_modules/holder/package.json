@@ -1,0 +1,21 @@
+{
+  "name": "holder",
+  "version": "0.0.0",
+  "description": "A simple caching utility",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/UmbraEngineering/node-holder"
+  },
+  "keywords": [
+    "caching",
+    "file",
+    "memory",
+    "null"
+  ],
+  "author": "James Brumond",
+  "license": "MIT"
+}

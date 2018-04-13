@@ -1,0 +1,9 @@
+{
+    "name": "php_tutors/alipay_sample",
+    "description": "to do transaction onlince via e-commerce",
+    "type": "library",
+    "minimum-stability": "RC",
+    "require": {
+        "monolog/monolog": "^1.23"
+    }
+}

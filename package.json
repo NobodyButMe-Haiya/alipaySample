@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "holder": "^0.0.0",
+    "holderjs": "^2.9.4",
+    "jquery-slim": "^3.0.0",
+    "popper.js": "^1.14.3"
+  }
+}
