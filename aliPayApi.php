@@ -49,7 +49,7 @@ $key = filter_input(INPUT_POST, "key");
 $sign_type = filter_input(INPUT_POST, "sign_type");
 
 // this is override if wanted to use global config
-include_once ("config.php");
+include_once("config.php");
 // first test generate output
 try {
     $aliPay = new AliPayClass();
@@ -67,7 +67,6 @@ try {
         ->setSignType($sign_type);
 
 
-    
     $aliPay->setSubmitAliPay();
 } catch (Exception $exception) {
     echo $exception->getMessage();

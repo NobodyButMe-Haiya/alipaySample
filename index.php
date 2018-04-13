@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Ali Pay Example (Not official)</title>
 
@@ -18,13 +17,9 @@
             max-width: 960px;
         }
 
-        .border-top { border-top: 1px solid #e5e5e5; }
-        .border-bottom { border-bottom: 1px solid #e5e5e5; }
-        .border-top-gray { border-top-color: #adb5bd; }
-
-        .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
-
-        .lh-condensed { line-height: 1.25; }
+        .lh-condensed {
+            line-height: 1.25;
+        }
     </style>
 </head>
 
@@ -32,7 +27,7 @@
 
 <div class="container">
     <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="logo/alipay_logo.png" alt="" width="182px" height="64px">
+        <img class="d-block mx-auto mb-4" src="logo/alipay_logo.png" alt="" width="182" height="64">
         <h2>Sample</h2>
     </div>
 
@@ -43,20 +38,23 @@
             </h4>
             <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <button class="btn btn-info  btn-lg btn-block" type="button" onclick="copyAll()">Copy Sample </button>
+                    <button class="btn btn-info  btn-lg btn-block" type="button" onclick="copyAll()">Copy Sample
+                    </button>
 
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                         <h6 class="my-0">body</h6>
-                        <small class="text-muted">E.g  Purchases for 12 x 12.24  </small>
+                        <small class="text-muted">E.g Purchases for 12 x 12.24</small>
                     </div>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                         <h6 class="my-0">Currency</h6>
-                        <small class="text-muted">GBP,HKD,CHF,SGD,</br>SEK,DKK,NOK,JPY,</br>CAD,AUD,EUR,NZD,KRW,</br>THB,CNY</small>
-                        </br>
+                        <small class="text-muted">GBP,HKD,CHF,SGD,<br>SEK,DKK,NOK,JPY,<br>CAD,AUD,EUR,NZD,KRW,<br>
+                            THB,CNY
+                        </small>
+                        <br>
                         <a href="https://global.alipay.com/help/integration/25">Support Currency Alipay </a>
                     </div>
                 </li>
@@ -65,7 +63,8 @@
                         <h6 class="my-0">Notify URL</h6>
                         <small class="text-muted">
                             http://172.129.0.1/notify_url.php
-                            <br><p class="text-danger">** must not use localhost</p></small>
+                            <br>
+                            <p class="text-danger">** must not use localhost</p></small>
 
                     </div>
                 </li>
@@ -86,7 +85,8 @@
                         <h6 class="my-0">Return URL</h6>
                         <small class="text-muted">
                             http://172.129.0.1/return_url.php
-                            <br><p class="text-danger">** must not use localhost</p></small>
+                            <br>
+                            <p class="text-danger">** must not use localhost</p></small>
                     </div>
                 </li>
 
@@ -121,15 +121,16 @@
             </ul>
         </div>
         <div class="col-md-8 order-md-1">
-            <form action="aliPayApi.php?d" method="post" >
+            <form action="aliPayApi.php?d" method="post">
 
 
                 <div class="mb-3">
                     <label for="body">Body</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="body" name="body" placeholder="Remarks: It is the description of the product." required>
+                        <input type="text" class="form-control" id="body" name="body"
+                               placeholder="Remarks: It is the description of the product." required>
                         <div class="invalid-feedback" style="width: 100%;">
-                          Please enter "Body"
+                            Please enter "Body"
                         </div>
                     </div>
                 </div>
@@ -159,7 +160,9 @@
 
                 <div class="mb-3">
                     <label for="notify_url">Notify Url</label>
-                    <input type="text" class="form-control" id="notify_url" name="notify_url" placeholder="The URL for receiving asynchronous notifications after the payment is done." required>
+                    <input type="text" class="form-control" id="notify_url" name="notify_url"
+                           placeholder="The URL for receiving asynchronous notifications after the payment is done."
+                           required>
                     <div class="invalid-feedback">
                         Please enter notify_url.
                     </div>
@@ -167,12 +170,14 @@
 
                 <div class="mb-3">
                     <label for="out_trade_no">Out Trade No (invoice number)</label>
-                    <input type="text" class="form-control" id="out_trade_no" name="out_trade_no" placeholder="invoice number">
+                    <input type="text" class="form-control" id="out_trade_no" name="out_trade_no"
+                           placeholder="invoice number">
                 </div>
 
                 <div class="mb-3">
                     <label for="partner">Partner / Merchant UID/PID </label>
-                    <input type="text" class="form-control" id="partner" name="partner" placeholder="Partner ID. Composed of 16 digits beginning with 2088.">
+                    <input type="text" class="form-control" id="partner" name="partner"
+                           placeholder="Partner ID. Composed of 16 digits beginning with 2088.">
                     <div class="invalid-feedback">
                         Please enter Partner / Merchant UID/PID.
                     </div>
@@ -180,7 +185,9 @@
 
                 <div class="mb-3">
                     <label for="return_url">Return Url</label>
-                    <input type="text" class="form-control" id="return_url" name="return_url" placeholder="After the payment is done, the result is returned to this url via the URL redirect" required>
+                    <input type="text" class="form-control" id="return_url" name="return_url"
+                           placeholder="After the payment is done, the result is returned to this url via the URL redirect"
+                           required>
                     <div class="invalid-feedback">
                         Please enter return url .
                     </div>
@@ -188,7 +195,9 @@
 
                 <div class="mb-3">
                     <label for="subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="The name of the items. It should not contain special symbols." required maxlength="255">
+                    <input type="text" class="form-control" id="subject" name="subject"
+                           placeholder="The name of the items. It should not contain special symbols." required
+                           maxlength="255">
                     <div class="invalid-feedback">
                         Please enter subject
                     </div>
@@ -196,13 +205,13 @@
 
                 <div class="mb-3">
                     <label for="total_fee">Total Fee/Transaction</label>
-                    <input type="text" class="form-control" id="total_fee" name="total_fee" placeholder="A floating number ranging 0.01～1000000.00. If total_fee is not null, it means the transaction uses foreign currency and the product price will be calculated in RMB based on the exchange rate." required>
+                    <input type="text" class="form-control" id="total_fee" name="total_fee"
+                           placeholder="A floating number ranging 0.01～1000000.00. If total_fee is not null, it means the transaction uses foreign currency and the product price will be calculated in RMB based on the exchange rate."
+                           required>
                     <div class="invalid-feedback">
                         Please enter your total transaction
                     </div>
                 </div>
-
-
 
 
                 <div class="mb-3">
@@ -225,7 +234,7 @@
                     </div>
                 </div>
                 <hr class="mb-4">
-                <input type="hidden" id="x" name="d" value="e" />
+                <input type="hidden" id="x" name="d" value="e"/>
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
             </form>
         </div>
@@ -235,7 +244,8 @@
         <p class="mb-1">&copy; 2017-2018 Tutorial</p>
         <ul class="list-inline">
             <li class="list-inline-item"><a href="https://global.alipay.com">Global Ali Pay Merchant </a></li>
-            <li class="list-inline-item"><a href="https://isandbox.alipaydev.com/user/intlAccountDetails.htm">Sandbox</a></li>
+            <li class="list-inline-item"><a
+                        href="https://isandbox.alipaydev.com/user/intlAccountDetails.htm">Sandbox</a></li>
             <li class="list-inline-item"><a href="https://globalprod.alipaydev.com/login/global.htm?goto=https%3A%2F%2Fglobalprod.alipaydev.com%2Forder%2FmyOrder.htm%3ForderState%3DP_CONFIRMATION
 ">Merchant Login</a></li>
         </ul>
@@ -245,14 +255,16 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="node_modules/jquery-slim/dist/jquery.slim.min.js"><\/script>')</script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <script src="node_modules/holderjs/holder.min.js"></script>
 <script>
 
-    function copyAll(){
-        $("#out_trade_no").val('test_'+Math.floor((Math.random() * 100) + 1));
+    function copyAll() {
+        $("#out_trade_no").val('test_' + Math.floor((Math.random() * 100) + 1));
         $("#subject").val("test123");
         $("#currency").val("USD");
         $("#total_fee").val(Math.floor((Math.random() * 100) + 1));

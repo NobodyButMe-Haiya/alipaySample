@@ -781,9 +781,9 @@ Class AliPayClass extends AbstractClass
      */
     function md5Sign($parameter_string, $key)
     {
-        $parameter_string= $parameter_string . $key;
+        $parameter_string = $parameter_string . $key;
         $md5 = md5($parameter_string);
-        $this->setMonolog(self::LOG_INFO,"my sign :[".$md5."]");
+        $this->setMonolog(self::LOG_INFO, "my sign :[" . $md5 . "]");
         return $md5;
     }
 
@@ -797,13 +797,13 @@ Class AliPayClass extends AbstractClass
      */
     function md5Verify($parameter_string, $sign, $key)
     {
-        $this->setMonolog(self::LOG_INFO,"parameter:[ ".$parameter_string."]");
-        $this->setMonolog(self::LOG_INFO,"key :[".$key."]");
+        $this->setMonolog(self::LOG_INFO, "parameter:[ " . $parameter_string . "]");
+        $this->setMonolog(self::LOG_INFO, "key :[" . $key . "]");
 
         $parameter_string = $parameter_string . $key;
         $my_sign = md5($parameter_string);
-        $this->setMonolog(self::LOG_INFO,"my sign  :[".$my_sign."]");
-        $this->setMonolog(self::LOG_INFO,"sign :[".$sign."]");
+        $this->setMonolog(self::LOG_INFO, "my sign  :[" . $my_sign . "]");
+        $this->setMonolog(self::LOG_INFO, "sign :[" . $sign . "]");
 
         if ($my_sign == $sign) {
             return true;
@@ -919,12 +919,11 @@ Class AliPayClass extends AbstractClass
         curl_setopt($curl, CURLOPT_POSTFIELDS, $para);
         $responseText = curl_exec($curl);
         $error = curl_error($curl);
-        if ($error)
-        {
-            $this->setMonolog(self::LOG_ERROR,$error);
+        if ($error) {
+            $this->setMonolog(self::LOG_ERROR, $error);
             throw new \Exception($error);
-        }else{
-            $this->setMonolog(self::LOG_INFO,"Curl Respond :[".$responseText."]");
+        } else {
+            $this->setMonolog(self::LOG_INFO, "Curl Respond :[" . $responseText . "]");
         }
         curl_close($curl);
 
@@ -951,12 +950,11 @@ Class AliPayClass extends AbstractClass
         curl_setopt($curl, CURLOPT_CAINFO, $certificate_authority_certificates_url);
         $responseText = curl_exec($curl);
         $error = curl_error($curl);
-        if ($error)
-        {
-            $this->setMonolog(self::LOG_ERROR,$error);
+        if ($error) {
+            $this->setMonolog(self::LOG_ERROR, $error);
             throw new \Exception($error);
-        }else{
-            $this->setMonolog(self::LOG_INFO,"Curl Respond :[".$responseText."]");
+        } else {
+            $this->setMonolog(self::LOG_INFO, "Curl Respond :[" . $responseText . "]");
         }
         curl_close($curl);
 
@@ -2019,11 +2017,10 @@ Class AliPayClass extends AbstractClass
 
     /**
      * Return Ali Pay Configuration
-     * @param  null|string $mode
      * @return array|bool
      * @throws \Exception
      */
-    public function getAliPayParameter($mode = null)
+    public function getAliPayParameter()
     {
 
         $this->alipay_config['partner'] = $this->getPartner();
