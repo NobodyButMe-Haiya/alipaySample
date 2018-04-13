@@ -97,8 +97,8 @@ try {
     	   ->setPartner('Merchant UID/PID')  
     	   ->setReturnUrl('http://yourip/return_url.php')  
     	   ->setSubject('test123')  
-    	   ->setTotalFee('0.1')  
-    	   ->setKey('myiudoop3mcv9pgo47i76udxe5uwo41w')  
+    	   ->setTotalFee('total fee')  
+    	   ->setKey('key')  
     	   ->setSignType("MD5")  
     	   ->setSplitInfoDisable(1);        
           $alipay->setSubmitAliPay();  
